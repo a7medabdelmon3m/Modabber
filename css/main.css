@@ -1224,9 +1224,7 @@ td:last-child {
     grid-column: 7/13;
     grid-row: 5/7;
   }
-  .status-mobile {
-    display: none;
-  }
+  
 }
 @media (max-width: 770px) {
   .sidebar {
@@ -1267,9 +1265,7 @@ td:last-child {
   .dashboard .payments {
     order: 7;
   }
-  .status-mobile {
-    display: none;
-  }
+  
 }
 
 @media (max-width: 650px) {
@@ -1311,4 +1307,10 @@ td:last-child {
   }
   
 }
+@media (min-width: 651px) {
+  .status-mobile {
+    display: none;
+  }
+}
+
 /* end of responsive styling  section */
