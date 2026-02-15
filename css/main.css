@@ -77,7 +77,9 @@ body {
   overflow: auto;
   position: fixed;
   border: 1px solid rgba(128, 128, 128, 0.269);
-  box-shadow:0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a ;
+  box-shadow:
+    0 1px 3px 0 #0000001a,
+    0 1px 2px -1px #0000001a;
 }
 
 .logo-package {
@@ -207,7 +209,7 @@ body {
 .main-content {
   grid-column: 3/13;
   padding: 32px;
-  min-width: 0; 
+  min-width: 0;
   overflow: hidden;
 }
 body::-webkit-scrollbar {
@@ -217,7 +219,9 @@ body::-webkit-scrollbar {
   margin-bottom: 40px;
   border: 1px solid rgba(128, 128, 128, 0.298);
   border-radius: 16px;
-  box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+  box-shadow:
+    0 1px 3px 0 #0000001a,
+    0 1px 2px -1px #0000001a;
 }
 .header .container {
   padding: 1.5rem;
@@ -235,8 +239,17 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 8px;
   color: var(--c-green);
+  background-color: #27fc7517;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 16px;
+  border: solid 1px #27fc75df;
+  span {
+    margin: 0;
+  }
 }
-.header .right .status div {
+.header .right .status div , .status-mobile div {
   width: 8px;
   height: 8px;
   background-color: var(--c-green);
@@ -290,7 +303,9 @@ body::-webkit-scrollbar {
   padding: 8px 12px;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+  box-shadow:
+    0 1px 3px 0 #0000001a,
+    0 1px 2px -1px #0000001a;
   border-radius: 12px;
   transition: all 0.1s;
 }
@@ -1133,126 +1148,166 @@ td:last-child {
   border-radius: 6px;
   background-color: #ffffff;
 }
-.payments .card:nth-of-type(2) .front{
-  background-color: #C70036;
+.payments .card:nth-of-type(2) .front {
+  background-color: #c70036;
 }
 /* ********************************************* */
 /* end of last sec section */
 /* ******************************** */
 /* start of resposive styling section */
 @media (max-width: 1280px) {
-  .sidebar{
+  .sidebar {
     padding: 12px;
   }
   .sidebar .logo-package {
     width: 40px;
     height: 40px;
   }
-  .sidebar .logo-package .logo{
+  .sidebar .logo-package .logo {
     height: 100%;
   }
   .sidebar .logo-package .name,
-  .main-nav ul li span p ,
+  .main-nav ul li span p,
   .main-sidebar h3,
   .main-sidebar button span {
     display: none;
   }
-  .main-sidebar button{
+  .main-sidebar button {
     padding: 0;
   }
-  .main-nav ul li{
+  .main-nav ul li {
     width: 40px;
   }
-  .main-nav ul li span{
-   
+  .main-nav ul li span {
     gap: 0;
     justify-content: center;
     padding: 12px 8px;
   }
-  
-  .sidebar{
+
+  .sidebar {
     grid-column: span 1;
-  
   }
-  .main-content{
+  .main-content {
     grid-column: 2/13;
   }
-  body{
-    grid-template-columns: 53px repeat(11,1fr);
+  body {
+    grid-template-columns: 53px repeat(11, 1fr);
   }
-  .dashboard{
-    
-    grid-template-rows: repeat(6,minmax(0 ,1fr));
-    
-
+  .dashboard {
+    grid-template-rows: repeat(6, minmax(0, 1fr));
   }
-  .dashboard .activities{
-    grid-column: 1/7  ;
-    grid-row:1/2 ;
+  .dashboard .activities {
+    grid-column: 1/7;
+    grid-row: 1/2;
   }
-  .dashboard .income{
-    grid-column: 7/13  ;
-    grid-row:1/2 ;
+  .dashboard .income {
+    grid-column: 7/13;
+    grid-row: 1/2;
   }
-  .dashboard .transactions{
-    grid-column: 1/13  ;
-    grid-row:2/4 ;
+  .dashboard .transactions {
+    grid-column: 1/13;
+    grid-row: 2/4;
   }
-  .dashboard .m-bills{
-    grid-column: 1/7  ;
-    grid-row:4/5 ;
+  .dashboard .m-bills {
+    grid-column: 1/7;
+    grid-row: 4/5;
   }
-  .dashboard .account-summary{
-    grid-column: 7/13  ;
-    grid-row:4/5 ;
+  .dashboard .account-summary {
+    grid-column: 7/13;
+    grid-row: 4/5;
   }
-  .dashboard .all-budget{
-    grid-column: 1/7  ;
-    grid-row:5/7 ;
+  .dashboard .all-budget {
+    grid-column: 1/7;
+    grid-row: 5/7;
   }
-  .dashboard .payments{
-    grid-column: 7/13  ;
-    grid-row:5/7 ;
+  .dashboard .payments {
+    grid-column: 7/13;
+    grid-row: 5/7;
+  }
+  .status-mobile {
+    display: none;
   }
 }
 @media (max-width: 770px) {
-  .sidebar{
+  .sidebar {
     display: none;
   }
-  .main-content{
+  .main-content {
     grid-column: span 12;
   }
   .summary-cards {
-    grid-template-rows: repeat(3 minmax(0 , 1fr));
+    grid-template-rows: repeat(3 minmax(0, 1fr));
   }
-  .summary-cards .card{
+  .summary-cards .card {
     grid-column: span 12;
   }
-   .main-content .dashboard{
-     display: flex;
-     flex-direction: column;
+  .main-content .dashboard {
+    display: flex;
+    flex-direction: column;
   }
-  .dashboard .activities{
-    order:1 ;
+  .dashboard .activities {
+    order: 1;
   }
-  .dashboard .transactions{
+  .dashboard .transactions {
     order: 2;
     overflow-y: hidden;
   }
-  .dashboard .m-bills{
+  .dashboard .m-bills {
     order: 3;
   }
-  .dashboard .all-budget{
+  .dashboard .all-budget {
     order: 4;
   }
-  .dashboard .income{
+  .dashboard .income {
     order: 5;
   }
-  .dashboard .account-summary{
-   order: 6 ;
+  .dashboard .account-summary {
+    order: 6;
   }
-  .dashboard .payments{
-   order:7;
+  .dashboard .payments {
+    order: 7;
+  }
+  .status-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .header .container {
+    gap: 12px;
+    flex-direction: column;
+    .left {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  .header .right .status {
+    display: none;
+    background-color: red;
+  }
+  .logo-package.right{
+    align-self: flex-start;
+  }
+  .status-mobile {
+    display: block;
+    margin-top: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--c-green);
+    background-color: #27fc7517;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 16px;
+    width: 100%;
+    border: solid 1px #27fc75df;
+    span {
+      margin: 0;
+    }
+    
   }
   
 }
